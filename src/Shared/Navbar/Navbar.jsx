@@ -3,18 +3,18 @@ import logo from "../../../images/logo.svg";
 
 const Navbar = () => {
 
-    const navLink = 
-    <>
-        <li><NavLink className="mr-2" to="/">Home</NavLink></li>
-        <li><NavLink className="mr-2" to="/availablefood">Available Foods</NavLink></li>
-        <li><NavLink className="mr-2" to="/addfood">Add Food</NavLink></li>
-        <li><NavLink className="mr-2" to="/managefood">Manage My Foods</NavLink></li>
-        <li><NavLink to="/foodrequest">My Food Request</NavLink></li>
-    </>
+    const navLink =
+        <>
+            <li><NavLink className="mr-2" to="/">Home</NavLink></li>
+            <li><NavLink className="mr-2" to="/availablefood">Available Foods</NavLink></li>
+            <li><NavLink className="mr-2" to="/addfood">Add Food</NavLink></li>
+            <li><NavLink className="mr-2" to="/managefood">Manage My Foods</NavLink></li>
+            <li><NavLink to="/foodrequest">My Food Request</NavLink></li>
+        </>
 
     return (
         <div>
-            <div className="navbar bg-base-100 px-10">
+            <div className="navbar bg-slate-50 px-10">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -33,7 +33,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to="/login"><button className="btn">Login</button></Link>
+                    <Link to="/login"><button className="btn bg-rose-200 text-rose-700">Login</button></Link>
                 </div>
             </div>
         </div>
