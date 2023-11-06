@@ -11,7 +11,7 @@ const Footer = () => {
                     </p>
                     <p>Copyright © 2023 - All right reserved</p>
                     <p>Contact: 0123456789</p>
-                    <p>Address: </p>
+                    <p>Address: Dhaka, Bangladesh</p>
                 </aside>
                 <nav>
                     <div className="grid grid-flow-col gap-4">
