@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../Shared/Footer/Footer";
 import Navbar from "../Shared/Navbar/Navbar";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import { ToastContainer, toast } from 'react-toastify';
+// import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { updateProfile } from "firebase/auth";
 
@@ -11,6 +11,7 @@ const Signup = () => {
 
     const { createUser } = useContext(AuthContext);
     const [errorMessage, setErrorMessage] = useState("");
+    const navigate = useNavigate();
 
     const handleRegister = e => {
         e.preventDefault();
@@ -30,7 +31,7 @@ const Signup = () => {
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
-                toast("Your registration is done successfully");
+                navigate("/");
 
                 updateProfile(result.user, {
                     displayName: name,
@@ -102,7 +103,7 @@ const Signup = () => {
             </div>
             <p className="my-10 text-center">If you already have an account <Link to="/login"><span className="text-rose-700 font-semibold">Login</span></Link> here</p>
             <Footer></Footer>
-            <ToastContainer />
+            {/* <ToastContainer /> */}
         </div>
     );
 };

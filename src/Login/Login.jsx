@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../Shared/Footer/Footer";
 import Navbar from "../Shared/Navbar/Navbar";
 
 const Login = () => {
+
     return (
         <div>
             <Navbar></Navbar>
@@ -22,7 +23,7 @@ const Login = () => {
                         <input type="password" placeholder="password" className="input input-bordered" required />
                     </div>
                     <div className="form-control mt-6">
-                        <button className="btn bg-rose-200 text-rose-700">Login</button>
+                        <Link to="/"><button className="btn bg-rose-200 text-rose-700">Login</button></Link>
                     </div>
                 </form>
                 <p className="text-center pb-8">Login with <span className="text-rose-700 font-semibold">Google</span> / <span className="text-rose-700 font-semibold">Github</span></p>

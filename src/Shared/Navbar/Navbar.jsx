@@ -1,11 +1,19 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../images/logo.svg";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext);
+
+    // const [foodAdd, setFoodAdd] = useState([]);
+
+    // useEffect(() => {
+    //     fetch("http://localhost:5000/user")
+    //     .then(res => res.json())
+    //     .then(data => setFoodAdd(data))
+    // }, [])
 
     const handleLogout = () => {
         logOut()

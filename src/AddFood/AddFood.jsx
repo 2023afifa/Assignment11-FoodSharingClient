@@ -1,12 +1,20 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import Footer from "../Shared/Footer/Footer";
 import Navbar from "../Shared/Navbar/Navbar";
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const AddFood = () => {
 
-    const donators = useLoaderData();
-    const { id } = useParams();
-    const donator = donators.find(donator => donator._id == id);
+    const { user } = useContext(AuthContext);
+    console.log(user);
+    console.log(user.email);
+
+    // const donators = useLoaderData();
+    // console.log(donators);
+    // const {id} = useParams();
+    // const donator = donators.find(donator => donator._id == id);
+    // console.log(donator);
 
     const handleAddFood = e => {
         e.preventDefault();
@@ -25,17 +33,17 @@ const AddFood = () => {
         const newFood = { name, image, quantity, location, expired, note, status, donatorname, donatoremail, donatorimage };
         console.log(newFood);
 
-        // fetch("http://localhost:5000/allfood", {
-        //     method: "POST",
-        //     headers: {
-        //         "content-type": "application/json"
-        //     },
-        //     body: JSON.stringify(newFood)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //     })
+        fetch("http://localhost:5000/allfood", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(newFood)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
     }
 
     return (
@@ -48,7 +56,8 @@ const AddFood = () => {
                 </div>
                 <form onSubmit={handleAddFood} className="px-40">
                     <div>
-                        <div className="mx-auto">
+                        <div>
+                            <h3 className="font-bold mb-3">Food Name:</h3>
                             <div className="form-control mb-5">
                                 <label className="input-group">
                                     <input type="text" name="name" placeholder="Enter food name" className="input w-1/2" />
@@ -56,6 +65,7 @@ const AddFood = () => {
                             </div>
                         </div>
                         <div>
+                            <h3 className="font-bold mb-3">Food Image:</h3>
                             <div className="form-control mb-5">
                                 <label className="input-group">
                                     <input type="text" name="image" placeholder="Enter food image" className="input w-1/2" />
@@ -63,6 +73,7 @@ const AddFood = () => {
                             </div>
                         </div>
                         <div>
+                            <h3 className="font-bold mb-3">Food Quantity (gm):</h3>
                             <div className="form-control mb-5">
                                 <label className="input-group">
                                     <input type="text" name="quantity" placeholder="Enter food quantity" className="input w-1/2" />
@@ -70,6 +81,7 @@ const AddFood = () => {
                             </div>
                         </div>
                         <div>
+                            <h3 className="font-bold mb-3">Pickup Location:</h3>
                             <div className="form-control mb-5">
                                 <label className="input-group">
                                     <input type="text" name="location" placeholder="Enter pickup location" className="input w-1/2" />
@@ -77,6 +89,7 @@ const AddFood = () => {
                             </div>
                         </div>
                         <div>
+                            <h3 className="font-bold mb-3">Expired Time (days):</h3>
                             <div className="form-control mb-5">
                                 <label className="input-group">
                                     <input type="text" name="expired" placeholder="Enter expired time (days)" className="input w-1/2" />
@@ -84,6 +97,7 @@ const AddFood = () => {
                             </div>
                         </div>
                         <div>
+                            <h3 className="font-bold mb-3">Additional Notes:</h3>
                             <div className="form-control mb-5">
                                 <label className="input-group">
                                     <input type="text" name="note" placeholder="Enter additional notes" className="input w-1/2" />
@@ -94,29 +108,33 @@ const AddFood = () => {
 
                     <div>
                         <div>
+                            <h3 className="font-bold mb-3">Donator Name:</h3>
                             <div className="form-control mb-5">
                                 <label className="input-group">
-                                    <input type="text" name="donatorname" defaultValue={donator.name} placeholder="Donator name" className="input w-1/2" />
+                                    <input type="text" name="donatorname" defaultValue={user.displayName} placeholder="Donator name" className="input w-1/2" />
                                 </label>
                             </div>
                         </div>
                         <div>
+                            <h3 className="font-bold mb-3">Donator Email:</h3>
                             <div className="form-control mb-5">
                                 <label className="input-group">
-                                    <input type="text" name="donatoremail" defaultValue={donator.email} placeholder="Donator email" className="input w-1/2" />
+                                    <input type="text" name="donatoremail" defaultValue={user.email} placeholder="Donator email" className="input w-1/2" />
                                 </label>
                             </div>
                         </div>
                         <div>
+                            <h3 className="font-bold mb-3">Donator Image:</h3>
                             <div className="form-control mb-5">
                                 <label className="input-group">
-                                    <input type="text" name="donatorimage" defaultValue={donator.photo} placeholder="Donator image" className="input w-1/2" />
+                                    <input type="text" name="donatorimage" defaultValue={user.photoURL} placeholder="Donator image" className="input w-1/2" />
                                 </label>
                             </div>
                         </div>
                     </div>
 
                     <div>
+                        <h3 className="font-bold mb-3">Food Status:</h3>
                         <div className="form-control mb-5">
                             <label className="input-group">
                                 <input type="text" name="status" defaultValue="Available" placeholder="Enter food status" className="input w-1/2" />
