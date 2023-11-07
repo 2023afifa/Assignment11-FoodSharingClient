@@ -9,7 +9,7 @@ const Details = () => {
 
     return (
         <div>
-            {/* <Navbar></Navbar> */}
+            <Navbar></Navbar>
 
             <h2 className="text-3xl font-black text-center">{food.name}</h2>
 
@@ -43,7 +43,7 @@ const Details = () => {
 
             </div>
 
-            {/* <Footer></Footer> */}
+            <Footer></Footer>
         </div>
     );
 };
