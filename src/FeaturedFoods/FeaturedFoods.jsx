@@ -13,7 +13,7 @@ const FeaturedFoods = () => {
 
     return (
         <div>
-            <h2 className="text-center text-2xl font-semibold mb-6">Featured Foods</h2>
+            <h2 className="text-center text-2xl font-bold mb-6">Featured Foods</h2>
             <div className="grid lg:grid-cols-3 mb-14">
                 {
                     foodCards.map(card => <FeaturedFood key={card.id} card={card}></FeaturedFood>)
