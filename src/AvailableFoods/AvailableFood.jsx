@@ -5,7 +5,7 @@ const AvailableFood = ({ card }) => {
 
     return (
         <div>
-            {/* <div className="card w-96 h-[550px] rounded-none bg-base-100 shadow-md mx-auto">
+            <div className="card w-96 h-[550px] rounded-none bg-base-100 shadow-md mx-auto">
                 <figure><img src={image} alt="Food" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>
@@ -25,7 +25,7 @@ const AvailableFood = ({ card }) => {
                         <Link to={`/food/${_id}`}><button className="btn bg-rose-200 text-rose-700">Details</button></Link>
                     </div>
                 </div>
-            </div> */}
+            </div>
         </div>
     );
 };
