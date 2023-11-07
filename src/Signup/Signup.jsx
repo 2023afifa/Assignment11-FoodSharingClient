@@ -40,7 +40,7 @@ const Signup = () => {
                         console.log("Profile updated");
                     })
                     .catch()
-                const user = { email };
+                const user = { email, name, photo };
                 fetch("http://localhost:5000/user", {
                     method: "POST",
                     headers: {

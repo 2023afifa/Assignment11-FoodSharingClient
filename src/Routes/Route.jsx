@@ -5,6 +5,7 @@ import Home from "../Home/Home/Home";
 import AddFood from "../AddFood/AddFood";
 import Login from "../Login/Login";
 import Signup from "../Signup/Signup";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -18,7 +19,8 @@ const router = createBrowserRouter([
             },
             {
                 path: "/addfood",
-                element: <AddFood></AddFood>,
+                element: <PrivateRoute><AddFood></AddFood></PrivateRoute>,
+                loader: () => fetch("http://localhost:5000/user"),
             },
             {
                 path: "/login",
