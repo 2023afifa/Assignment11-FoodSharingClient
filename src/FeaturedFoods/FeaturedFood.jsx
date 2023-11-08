@@ -5,7 +5,7 @@ const FeaturedFood = ({ card }) => {
 
     return (
         <div>
-            <div className="card w-96 h-96 bg-base-100 image-full shadow-xl mx-auto">
+            <div className="card w-80 lg:w-96 h-96 bg-base-100 image-full shadow-xl mx-auto">
                 <figure><img src={image} alt="food" /></figure>
                 <div className="card-body">
                     <div className="flex items-center gap-3">

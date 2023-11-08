@@ -19,7 +19,7 @@ const FeaturedFoods = () => {
     return (
         <div>
             <h2 className="text-center text-2xl font-bold mb-6">Featured Foods</h2>
-            <div className="grid lg:grid-cols-3 gap-10 mb-14">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-14">
                 {
                     firstSixItems.map(card => <FeaturedFood key={card.id} card={card}></FeaturedFood>)
                 }
