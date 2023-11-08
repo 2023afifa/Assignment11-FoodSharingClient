@@ -63,7 +63,7 @@ const ManageFood = ({ c }) => {
                     <button onClick={() => handleDelete(_id)} className="btn btn-ghost btn-xs bg-red-500 text-white">Delete</button>
                 </th>
                 <th>
-                    <button className="btn btn-ghost btn-xs bg-amber-500 text-white">Manage</button>
+                    <Link to={`/manage/${_id}`}><button className="btn btn-ghost btn-xs bg-amber-500 text-white">Manage</button></Link>
                 </th>
             </tr>
         </div>

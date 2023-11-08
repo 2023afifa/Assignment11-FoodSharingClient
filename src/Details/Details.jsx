@@ -1,11 +1,33 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
 import Footer from "../Shared/Footer/Footer";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Details = () => {
     const foodDetail = useLoaderData();
     const { id } = useParams();
     const food = foodDetail.find(food => food._id == id);
+
+    const handleRequest = (donatorname, location, expired, status, image) => {
+        const newRequest = { donatorname, location, expired, status, image };
+        console.log(newRequest);
+
+        fetch("http://localhost:5000/request", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(newRequest)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    toast("Added to cart successfully");
+                }
+            })
+    }
 
     return (
         <div>
@@ -27,22 +49,26 @@ const Details = () => {
                     <p><span className="font-semibold">Expired Time(day):</span> {food.expired}</p>
 
                     <div className="my-8">
-                        <button className="btn bg-rose-200 text-rose-700" onClick={() => document.getElementById('my_modal_2').showModal()}>Request</button>
-                        <dialog id="my_modal_2" className="modal">
-                            <div className="modal-box">
-                                <h3 className="font-bold text-lg mb-5">Notes</h3>
-                                <textarea className="textarea textarea-bordered w-full" placeholder="Notes..."></textarea>
-                                <p className="py-4">Donate (If you want): <input type="text" placeholder="$" className="input input-bordered w-full" /></p>
-                            </div>
-                            <form method="dialog" className="modal-backdrop">
-                                <button>close</button>
-                            </form>
-                        </dialog>
+                        <button className="btn bg-rose-200 text-rose-700" onClick={() => document.getElementById('my_modal_1').showModal()}>Apply Request</button>
+                        <form>
+                            <dialog id="my_modal_1" className="modal">
+                                <div className="modal-box">
+                                    <h3 className="font-bold text-lg mb-5">Notes</h3>
+                                    <textarea className="textarea textarea-bordered w-full" placeholder="Notes..."></textarea>
+                                    <p className="py-4">Donate (If you want): <input type="text" placeholder="$" className="input input-bordered w-full" /></p>
+                                    <div className="modal-action">
+                                        <form method="dialog">
+                                            <button onClick={() => handleRequest(food.donatorname, food.location, food.expired, food.status, food.image)} className="btn bg-rose-200 text-rose-700">Request</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </dialog>
+                        </form>
                     </div>
                 </div>
 
             </div>
-
+            <ToastContainer />
             <Footer></Footer>
         </div>
     );

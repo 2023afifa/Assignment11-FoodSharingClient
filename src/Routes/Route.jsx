@@ -10,6 +10,8 @@ import AvailableFoods from "../AvailableFoods/AvailableFoods";
 import Details from "../Details/Details";
 import ManageFoods from "../ManageFoods/ManageFoods";
 import Update from "../Update/Update";
+import ManageAFood from "../ManageFoods/ManageAFood";
+import Requests from "../Requests/Requests";
 
 const router = createBrowserRouter([
     {
@@ -31,8 +33,13 @@ const router = createBrowserRouter([
             },
             {
                 path: "/managefood",
-                element: <ManageFoods></ManageFoods>,
+                element: <PrivateRoute><ManageFoods></ManageFoods></PrivateRoute>,
                 loader: () => fetch("http://localhost:5000/allfood"),
+            },
+            {
+                path: "/request",
+                element: <PrivateRoute><Requests></Requests></PrivateRoute>,
+                loader: () => fetch("http://localhost:5000/request"),
             },
             {
                 path: "/food/:id",
@@ -43,6 +50,10 @@ const router = createBrowserRouter([
                 path: "/update/:id",
                 element: <Update></Update>,
                 loader: ({ params }) => fetch(`http://localhost:5000/allfood/${params.id}`),
+            },
+            {
+                path: "/manage/:id",
+                element: <ManageAFood></ManageAFood>,
             },
             {
                 path: "/login",

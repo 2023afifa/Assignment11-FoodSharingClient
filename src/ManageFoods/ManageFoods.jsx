@@ -7,6 +7,7 @@ import ManageFood from "./ManageFood";
 
 const ManageFoods = () => {
     const { user, loading } = useContext(AuthContext);
+    console.log(user);
 
     if (loading) {
         return <span className="loading loading-dots loading-md"></span>

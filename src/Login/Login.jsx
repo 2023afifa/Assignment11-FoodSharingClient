@@ -1,15 +1,38 @@
 import { Link, useNavigate } from "react-router-dom";
 import Footer from "../Shared/Footer/Footer";
 import Navbar from "../Shared/Navbar/Navbar";
+import { useContext, useState } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Login = () => {
+    const { logInUser, logInUserGoogle } = useContext(AuthContext);
+    const [errorMessage, setErrorMessage] = useState("");
+    const navigate = useNavigate();
+
+    // const handleLogin = e => {
+    //     e.preventDefault();
+    //     const email = e.target.email.value;
+    //     const password = e.target.password.value;
+
+    //     setErrorMessage("");
+
+    //     logInUser(email, password)
+    //         .then(result => {
+    //             console.log(result.user);
+    //             navigate("/");
+    //         })
+    //         .catch(error => {
+    //             console.error(error);
+    //             setErrorMessage(error.message);
+    //         })
+    // }
 
     return (
         <div>
             <Navbar></Navbar>
             <div className="card max-w-xl shadow-xl bg-rose-100 mt-20 mx-auto">
                 <h2 className="text-center text-2xl text-rose-700 font-semibold pt-10">Log In</h2>
-                <form className="card-body">
+                <form onSubmit={handleLogin} className="card-body">
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>
