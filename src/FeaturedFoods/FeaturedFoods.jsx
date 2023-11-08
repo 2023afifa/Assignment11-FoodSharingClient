@@ -11,12 +11,17 @@ const FeaturedFoods = () => {
             .then(data => setFoodCards(data))
     }, [])
 
+    const sortedData = [...foodCards].sort((a, b) => b.quantity - a.quantity);
+
+    // Get the first 6 items
+    const firstSixItems = sortedData.slice(0, 6);
+
     return (
         <div>
             <h2 className="text-center text-2xl font-bold mb-6">Featured Foods</h2>
             <div className="grid lg:grid-cols-3 gap-10 mb-14">
                 {
-                    foodCards.map(card => <FeaturedFood key={card.id} card={card}></FeaturedFood>)
+                    firstSixItems.map(card => <FeaturedFood key={card.id} card={card}></FeaturedFood>)
                 }
             </div>
             <div className="text-center mb-20">
