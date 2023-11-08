@@ -10,7 +10,7 @@ const Navbar = () => {
     // const [foodAdd, setFoodAdd] = useState([]);
 
     // useEffect(() => {
-    //     fetch("http://localhost:5000/user")
+    //     fetch("https://food-share-server-three.vercel.app/user")
     //     .then(res => res.json())
     //     .then(data => setFoodAdd(data))
     // }, [])

@@ -6,7 +6,7 @@ const FeaturedFoods = () => {
     const [foodCards, setFoodCards] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/allfood")
+        fetch("https://food-share-server-three.vercel.app/allfood")
             .then(res => res.json())
             .then(data => setFoodCards(data))
     }, [])

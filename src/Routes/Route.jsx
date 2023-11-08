@@ -34,27 +34,27 @@ const router = createBrowserRouter([
             {
                 path: "/managefood",
                 element: <PrivateRoute><ManageFoods></ManageFoods></PrivateRoute>,
-                loader: () => fetch("http://localhost:5000/allfood"),
+                loader: () => fetch("https://food-share-server-three.vercel.app/allfood"),
             },
             {
                 path: "/request",
                 element: <PrivateRoute><Requests></Requests></PrivateRoute>,
-                loader: () => fetch("http://localhost:5000/request"),
+                loader: () => fetch("https://food-share-server-three.vercel.app/request"),
             },
             {
                 path: "/food/:id",
                 element: <PrivateRoute><Details></Details></PrivateRoute>,
-                loader: () => fetch("http://localhost:5000/allfood"),
+                loader: () => fetch("https://food-share-server-three.vercel.app/allfood"),
             },
             {
                 path: "/update/:id",
                 element: <PrivateRoute><Update></Update></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/allfood/${params.id}`),
+                loader: ({ params }) => fetch(`https://food-share-server-three.vercel.app/allfood/${params.id}`),
             },
             {
                 path: "/manage/:id",
                 element: <PrivateRoute><ManageAFood></ManageAFood></PrivateRoute>,
-                loader: () => fetch("http://localhost:5000/request"),
+                loader: () => fetch("https://food-share-server-three.vercel.app/request"),
             },
             {
                 path: "/login",
