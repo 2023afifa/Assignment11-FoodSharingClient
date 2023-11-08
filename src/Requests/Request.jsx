@@ -11,7 +11,7 @@ const Request = ({ request }) => {
                     <p><span className="font-bold">Expired Time (days):</span> {expired}</p>
                     <p><span className="font-bold">Food Status:</span> {status}</p>
                     <div className="card-actions justify-end">
-                        <button className="btn bg-rose-200 text-rose-700">Cancel Request</button>
+                        <button className="btn text-red-500">Cancel Request</button>
                     </div>
                 </div>
             </div>

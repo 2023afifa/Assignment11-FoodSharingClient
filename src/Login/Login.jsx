@@ -31,6 +31,16 @@ const Login = () => {
             })
     }
 
+    const handleGoogleLogIn = () => {
+        logInUserGoogle()
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    }
+
     return (
         <div>
             <Navbar></Navbar>
@@ -56,7 +66,7 @@ const Login = () => {
                         <button className="btn bg-rose-200 text-rose-700">Login</button>
                     </div>
                 </form>
-                <p className="text-center pb-8">Login with <span className="text-rose-700 font-semibold">Google</span> / <span className="text-rose-700 font-semibold">Github</span></p>
+                <p className="text-center pb-8">Login with <a onClick={handleGoogleLogIn} className="text-rose-700 font-semibold">Google</a></p>
             </div>
             <p className="my-10 text-center">If you do not have any account <Link to="/signup"><span className="text-rose-700 font-semibold">Sign up</span></Link> here</p>
             <ToastContainer />
