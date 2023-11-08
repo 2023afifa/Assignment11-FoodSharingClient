@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const FeaturedFood = ({ card }) => {
     const { _id, name, image, quantity, location, expired, note, status, donatorname, donatoremail, donatorimage } = card;
 
@@ -17,7 +19,7 @@ const FeaturedFood = ({ card }) => {
                     <p><span className="font-semibold">Pickup Locaton:</span> {location}</p>
                     <p><span className="font-semibold">Expired Time (days):</span> {expired}</p>
                     <div className="card-actions justify-center mt-5">
-                        <button className="btn bg-rose-200 text-rose-700">Detail</button>
+                        <Link to={`/food/${_id}`}><button className="btn bg-rose-200 text-rose-700">Details</button></Link>
                     </div>
                 </div>
             </div>
