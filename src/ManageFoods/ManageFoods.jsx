@@ -4,6 +4,7 @@ import Navbar from "../Shared/Navbar/Navbar";
 import { AuthContext } from "../Provider/AuthProvider";
 import { useLoaderData } from "react-router-dom";
 import ManageFood from "./ManageFood";
+import { Helmet } from "react-helmet";
 
 const ManageFoods = () => {
     const { user, loading } = useContext(AuthContext);
@@ -19,6 +20,11 @@ const ManageFoods = () => {
 
     return (
         <div>
+
+            <Helmet>
+                <title>ShareWithHeart | Manage My Foods</title>
+            </Helmet>
+
             <Navbar></Navbar>
 
             <h2 className="text-center text-3xl font-semibold my-5">Manage My Foods</h2>

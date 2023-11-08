@@ -4,6 +4,7 @@ import Footer from "../Shared/Footer/Footer";
 import Request from "./Request";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const Requests = () => {
     const { user, loading } = useContext(AuthContext);
@@ -17,12 +18,16 @@ const Requests = () => {
     console.log(requests);
     const requestCard = requests.filter(card => card.myemail === user.email);
 
-    if(requestCard.length == 0){
+    if (requestCard.length == 0) {
         return <p className="my-40 text-center text-3xl font-bold">You did not apply any request</p>
     }
 
     return (
         <div>
+
+            <Helmet>
+                <title>ShareWithHeart | My Food Requests</title>
+            </Helmet>
 
             <Navbar></Navbar>
 

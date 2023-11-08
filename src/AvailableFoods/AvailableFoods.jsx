@@ -2,6 +2,7 @@ import Footer from "../Shared/Footer/Footer";
 import Navbar from "../Shared/Navbar/Navbar";
 import { useEffect, useState } from "react";
 import AvailableFood from "./AvailableFood";
+import { Helmet } from "react-helmet";
 
 const AvailableFoods = () => {
 
@@ -40,6 +41,9 @@ const AvailableFoods = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>ShareWithHeart | Available Foods</title>
+            </Helmet>
             <Navbar></Navbar>
             <h2 className="text-center text-3xl font-semibold my-5">All Available Foods</h2>
 

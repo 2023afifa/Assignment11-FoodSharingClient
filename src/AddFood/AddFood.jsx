@@ -3,6 +3,7 @@ import Footer from "../Shared/Footer/Footer";
 import Navbar from "../Shared/Navbar/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const AddFood = () => {
 
@@ -48,6 +49,10 @@ const AddFood = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>ShareWithHeart | Add Food</title>
+            </Helmet>
+
             <Navbar></Navbar>
             <div className="bg-slate-50 my-20">
                 <div className="lg:flex gap-16 items-center mb-14 lg:mx-40">
