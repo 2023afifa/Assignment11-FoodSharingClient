@@ -3,14 +3,23 @@ import Navbar from "../Shared/Navbar/Navbar";
 import Footer from "../Shared/Footer/Footer";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Details = () => {
+    const { user, loading } = useContext(AuthContext);
+    console.log(user);
+
+    if (loading) {
+        return <span className="loading loading-dots loading-md"></span>
+    }
+
     const foodDetail = useLoaderData();
     const { id } = useParams();
     const food = foodDetail.find(food => food._id == id);
 
-    const handleRequest = (donatorname, location, expired, status, image) => {
-        const newRequest = { donatorname, location, expired, status, image };
+    const handleRequest = (foodId, donatorname, donatoremail, donatorimage, location, expired, status, image, myname, myemail, myimage) => {
+        const newRequest = { foodId, donatorname, donatoremail, donatorimage, location, expired, status, image, myname, myemail, myimage };
         console.log(newRequest);
 
         fetch("http://localhost:5000/request", {
@@ -58,7 +67,7 @@ const Details = () => {
                                     <p className="py-4">Donate (If you want): <input type="text" placeholder="$" className="input input-bordered w-full" /></p>
                                     <div className="modal-action">
                                         <form method="dialog">
-                                            <button onClick={() => handleRequest(food.donatorname, food.location, food.expired, food.status, food.image)} className="btn bg-rose-200 text-rose-700">Request</button>
+                                            <button onClick={() => handleRequest(food._id, food.donatorname, food.donatoremail, food.donatorimage, food.location, food.expired, food.status, food.image, user.displayName, user.email, user.photoURL)} className="btn bg-rose-200 text-rose-700">Request</button>
                                         </form>
                                     </div>
                                 </div>

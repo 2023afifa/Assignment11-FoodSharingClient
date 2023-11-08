@@ -53,7 +53,8 @@ const router = createBrowserRouter([
             },
             {
                 path: "/manage/:id",
-                element: <ManageAFood></ManageAFood>,
+                element: <PrivateRoute><ManageAFood></ManageAFood></PrivateRoute>,
+                loader: () => fetch("http://localhost:5000/request"),
             },
             {
                 path: "/login",
