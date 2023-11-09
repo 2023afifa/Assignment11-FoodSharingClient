@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
-    const { logInUser, logInUserGoogle } = useContext(AuthContext);
+    const { logInUser, logInUserGoogle, logInUserGithub } = useContext(AuthContext);
     const [errorMessage, setErrorMessage] = useState("");
     const navigate = useNavigate();
     const location = useLocation();
@@ -41,6 +41,16 @@ const Login = () => {
             })
     }
 
+    const handleGithubLogIn = () => {
+        logInUserGithub()
+        .then(result => {
+            console.log(result.user);
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
+
     return (
         <div>
             <Navbar></Navbar>
@@ -66,7 +76,7 @@ const Login = () => {
                         <button className="btn bg-rose-200 text-rose-700">Login</button>
                     </div>
                 </form>
-                <p className="text-center pb-8">Login with <a onClick={handleGoogleLogIn} className="text-rose-700 font-semibold">Google</a></p>
+                <p className="text-center pb-8">Login with <a onClick={handleGoogleLogIn} className="text-rose-700 font-semibold">Google</a> / <a onClick={handleGithubLogIn} className="text-rose-700 font-semibold">Github</a></p>
             </div>
             <p className="my-10 text-center">If you do not have any account <Link to="/signup"><span className="text-rose-700 font-semibold">Sign up</span></Link> here</p>
             <ToastContainer />

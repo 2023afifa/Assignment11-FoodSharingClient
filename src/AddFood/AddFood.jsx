@@ -152,6 +152,7 @@ const AddFood = () => {
                 </form>
             </div>
             <Footer></Footer>
+            
         </div>
     );
 };
