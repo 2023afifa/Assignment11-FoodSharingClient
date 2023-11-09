@@ -13,7 +13,6 @@ const FeaturedFoods = () => {
 
     const sortedData = [...foodCards].sort((a, b) => b.quantity - a.quantity);
 
-    // Get the first 6 items
     const firstSixItems = sortedData.slice(0, 6);
 
     return (

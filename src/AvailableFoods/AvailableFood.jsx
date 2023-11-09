@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 const AvailableFood = ({ card }) => {
     const { _id, name, image, quantity, location, expired, note, status, donatorname, donatoremail, donatorimage } = card;
 
+
     return (
         <div>
             <div className="card w-96 h-[550px] rounded-none bg-base-100 shadow-md mx-auto">

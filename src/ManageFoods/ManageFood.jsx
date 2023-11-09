@@ -15,6 +15,7 @@ const ManageFood = ({ c }) => {
             cancelButtonColor: '#8EACCD',
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
+            console.log("result", result);
             if (result.isConfirmed) {
                 fetch(`https://food-share-server-three.vercel.app/allfood/${_id}`, {
                     method: "DELETE"

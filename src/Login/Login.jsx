@@ -3,8 +3,8 @@ import Footer from "../Shared/Footer/Footer";
 import Navbar from "../Shared/Navbar/Navbar";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet";
+import axios from "axios";
 
 const Login = () => {
     const { logInUser, logInUserGoogle, logInUserGithub } = useContext(AuthContext);
@@ -22,8 +22,16 @@ const Login = () => {
         logInUser(email, password)
             .then(result => {
                 console.log(result.user);
-                navigate(location?.state ? location?.state : "/");
-                toast("Logged in successfully");
+                const user = { email };
+                axios.post("https://food-share-server-three.vercel.app/jwt", user, {
+                    withCredentials: true
+                })
+                .then(res => {
+                    console.log(res.data);
+                    if (res.data.success) {
+                        navigate(location?.state ? location?.state : "/");
+                    }
+                })
             })
             .catch(error => {
                 console.error(error);
@@ -53,6 +61,9 @@ const Login = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>ShareWithHeart | Log In</title>
+            </Helmet>
             <Navbar></Navbar>
             <div className="card max-w-xl shadow-xl bg-rose-100 mt-20 mx-auto">
                 <h2 className="text-center text-2xl text-rose-700 font-semibold pt-10">Log In</h2>
@@ -79,7 +90,6 @@ const Login = () => {
                 <p className="text-center pb-8">Login with <a onClick={handleGoogleLogIn} className="text-rose-700 font-semibold">Google</a> / <a onClick={handleGithubLogIn} className="text-rose-700 font-semibold">Github</a></p>
             </div>
             <p className="my-10 text-center">If you do not have any account <Link to="/signup"><span className="text-rose-700 font-semibold">Sign up</span></Link> here</p>
-            <ToastContainer />
             <Footer></Footer>
         </div>
     );

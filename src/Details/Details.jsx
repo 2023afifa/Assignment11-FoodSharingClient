@@ -33,7 +33,7 @@ const Details = () => {
             .then(data => {
                 console.log(data);
                 if (data.insertedId) {
-                    toast("Added to cart successfully");
+                    toast("Request added successfully");
                 }
             })
     }

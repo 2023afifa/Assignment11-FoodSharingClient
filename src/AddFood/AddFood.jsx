@@ -1,8 +1,9 @@
-import { useLoaderData, useParams } from "react-router-dom";
 import Footer from "../Shared/Footer/Footer";
 import Navbar from "../Shared/Navbar/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from "react-helmet";
 
 const AddFood = () => {
@@ -10,12 +11,6 @@ const AddFood = () => {
     const { user } = useContext(AuthContext);
     console.log(user);
     console.log(user.email);
-
-    // const donators = useLoaderData();
-    // console.log(donators);
-    // const {id} = useParams();
-    // const donator = donators.find(donator => donator._id == id);
-    // console.log(donator);
 
     const handleAddFood = e => {
         e.preventDefault();
@@ -44,6 +39,9 @@ const AddFood = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                if (data.insertedId) {
+                    toast("Added the food successfully");
+                }
             })
     }
 
@@ -151,8 +149,8 @@ const AddFood = () => {
                     </div>
                 </form>
             </div>
+            <ToastContainer />
             <Footer></Footer>
-            
         </div>
     );
 };

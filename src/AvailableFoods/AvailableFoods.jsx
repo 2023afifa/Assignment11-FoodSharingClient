@@ -3,20 +3,37 @@ import Navbar from "../Shared/Navbar/Navbar";
 import { useEffect, useState } from "react";
 import AvailableFood from "./AvailableFood";
 import { Helmet } from "react-helmet";
+import { useLoaderData } from "react-router-dom";
 
 const AvailableFoods = () => {
 
     const [foodCards, setFoodCards] = useState([]);
-    // const [cards, setCards] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredData, setFilteredData] = useState([]);
     const [sorted, setSorted] = useState(false);
+
 
     useEffect(() => {
         fetch("https://food-share-server-three.vercel.app/allfood")
             .then(res => res.json())
             .then(data => setFoodCards(data))
     }, [])
+
+
+    const allRequests = useLoaderData();
+    const allRequest = allRequests.filter(request => request.status == "confirm");
+    console.log(allRequest);
+
+
+    // const remainingFoods = foodCards.map((foodCard) => {
+    //     const matchCard = allRequest.find(card => card.foodId !== foodCard._id);
+    //     console.log(matchCard);
+    //     return matchCard;
+    // });
+
+    // console.log(remainingFoods);
+    // setFoodCards(remainingFoods);
+
 
     const handleSearch = () => {
         if (searchTerm === "") {

@@ -3,9 +3,8 @@ import Footer from "../Shared/Footer/Footer";
 import Navbar from "../Shared/Navbar/Navbar";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
 import { updateProfile } from "firebase/auth";
+import { Helmet } from "react-helmet";
 
 const Signup = () => {
 
@@ -65,6 +64,9 @@ const Signup = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>ShareWithHeart | Sign Up</title>
+            </Helmet>
             <Navbar></Navbar>
             <div className="card max-w-xl shadow-xl bg-rose-100 mt-20 mx-auto">
                 <h2 className="text-center text-2xl text-rose-700 font-semibold pt-10">Register</h2>
@@ -103,7 +105,6 @@ const Signup = () => {
             </div>
             <p className="my-10 text-center">If you already have an account <Link to="/login"><span className="text-rose-700 font-semibold">Login</span></Link> here</p>
             <Footer></Footer>
-            {/* <ToastContainer /> */}
         </div>
     );
 };

@@ -26,6 +26,7 @@ const router = createBrowserRouter([
             {
                 path: "/availablefood",
                 element: <AvailableFoods></AvailableFoods>,
+                loader: () => fetch("https://food-share-server-three.vercel.app/request"),
             },
             {
                 path: "/addfood",
