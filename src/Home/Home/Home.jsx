@@ -5,6 +5,7 @@ import FeaturedFoods from "../../FeaturedFoods/FeaturedFoods";
 import FAQ from "../FAQ/FAQ";
 import Gallery from "../Gallery/Gallery";
 import { Helmet } from "react-helmet";
+import Success from "../Success/Success";
 
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
             <Navbar></Navbar>
             <Banner></Banner>
             <FeaturedFoods></FeaturedFoods>
+            <Success></Success>
             <Gallery></Gallery>
             <FAQ></FAQ>
             <Footer></Footer>

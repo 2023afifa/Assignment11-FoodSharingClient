@@ -20,7 +20,7 @@ const Notes = () => {
         const newNote = { note, name, email, photo };
         console.log(newNote);
 
-        fetch("http://localhost:5000/note", {
+        fetch("https://food-share-server-three.vercel.app/note", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
