@@ -1,8 +1,10 @@
-# React + Vite
+Assignment category_0007
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+5 bullet points for my project
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is a food sharing related website named ShareWithHeart. You will find here some food items made by the donators.
+In the featured food section, if you click details section you will see the detail information of the food card. But you have to login first.
+You can donate your food by clicking on Add food section. Here, you have to insert some information.
+In the Available foods section you will see all the foods and you can search the food by their name and also you can sort the foods by expired time.
+In the Manage food section you can edit, delete and manage your foods.
+Client side live link: https://foodsharing-d0b61.web.app/
