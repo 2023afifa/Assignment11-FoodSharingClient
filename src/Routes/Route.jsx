@@ -12,6 +12,7 @@ import ManageFoods from "../ManageFoods/ManageFoods";
 import Update from "../Update/Update";
 import ManageAFood from "../ManageFoods/ManageAFood";
 import Requests from "../Requests/Requests";
+import Notes from "../Home/Notes/Notes";
 
 const router = createBrowserRouter([
     {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
                 path: "/manage/:id",
                 element: <PrivateRoute><ManageAFood></ManageAFood></PrivateRoute>,
                 loader: () => fetch("https://food-share-server-three.vercel.app/request"),
+            },
+            {
+                path: "/note",
+                element: <PrivateRoute><Notes></Notes></PrivateRoute>,
             },
             {
                 path: "/login",
