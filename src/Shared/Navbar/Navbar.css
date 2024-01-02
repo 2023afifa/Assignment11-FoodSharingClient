@@ -1,0 +1,10 @@
+.navLink>li>a.active {
+    background-color: rgb(190 18 60) !important;
+    color: rgb(241 245 249) !important;
+    border-radius: 0px;
+}
+
+.navLink>li>a:hover {
+    background-color: transparent;
+    color: rgb(190 18 60);
+}
