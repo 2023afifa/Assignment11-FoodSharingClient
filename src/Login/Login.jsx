@@ -23,7 +23,7 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
                 const user = { email };
-                axios.post("https://food-share-server-three.vercel.app/jwt", user, {
+                axios.post("http://localhost:5000/jwt", user, {
                     withCredentials: true
                 })
                 .then(res => {

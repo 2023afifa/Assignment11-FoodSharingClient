@@ -25,7 +25,7 @@ const ManageAFood = () => {
     }
 
     const handleFoodStatus= id => {
-        fetch(`https://food-share-server-three.vercel.app/request/${id}`, {
+        fetch(`http://localhost:5000/request/${id}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json"

@@ -14,7 +14,7 @@ const AvailableFoods = () => {
 
 
     useEffect(() => {
-        fetch("https://food-share-server-three.vercel.app/allfood")
+        fetch("http://localhost:5000/allfood")
             .then(res => res.json())
             .then(data => setFoodCards(data))
     }, [])

@@ -29,7 +29,7 @@ const AddFood = () => {
         const newFood = { name, image, quantity, location, expired, note, status, donatorname, donatoremail, donatorimage };
         console.log(newFood);
 
-        fetch("https://food-share-server-three.vercel.app/allfood", {
+        fetch("http://localhost:5000/allfood", {
             method: "POST",
             headers: {
                 "content-type": "application/json"

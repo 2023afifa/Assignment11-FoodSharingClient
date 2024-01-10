@@ -19,7 +19,7 @@ const Request = ({ request }) => {
             }).then((result) => {
                 console.log(result);
                 if (result.isConfirmed) {
-                    fetch(`https://food-share-server-three.vercel.app/request/${_id}`, {
+                    fetch(`http://localhost:5000/request/${_id}`, {
                         method: "DELETE"
                     })
                         .then(res => res.json())

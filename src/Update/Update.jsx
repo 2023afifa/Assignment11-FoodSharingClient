@@ -20,7 +20,7 @@ const Update = () => {
         const editFood = { name, image, quantity, location, expired, note };
         console.log(editFood);
 
-        fetch(`https://food-share-server-three.vercel.app/allfood/${_id}`, {
+        fetch(`http://localhost:5000/allfood/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

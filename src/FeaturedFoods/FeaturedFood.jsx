@@ -5,11 +5,11 @@ const FeaturedFood = ({ card }) => {
 
     return (
         <div>
-            <div className="card w-80 lg:w-96 h-96 bg-base-100 image-full shadow-xl mx-auto">
-                <figure><img src={image} alt="food" /></figure>
+            <div className="card w-80 lg:w-96 h-96 image-full mx-auto">
+                <figure><img className="rounded-sm" src={image} alt="food" /></figure>
                 <div className="card-body">
                     <div className="flex items-center gap-3">
-                        <img className="rounded-full h-12 w-12" src={donatorimage} alt="" />
+                        <img className="rounded-full h-14 w-14" src={donatorimage} alt="" />
                         <p className="font-semibold">{donatorname}</p>
                     </div>
                     <h2 className="card-title">{name}</h2>

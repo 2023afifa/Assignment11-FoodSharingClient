@@ -41,7 +41,7 @@ const Signup = () => {
                     })
                     .catch()
                 const user = { email, name, photo };
-                fetch("https://food-share-server-three.vercel.app/user", {
+                fetch("http://localhost:5000/user", {
                     method: "POST",
                     headers: {
                         "content-type": "application/json"
