@@ -7,4 +7,4 @@ In the featured food section, if you click details section you will see the deta
 You can donate your food by clicking on Add food section. Here, you have to insert some information.
 In the Available foods section you will see all the foods and you can search the food by their name and also you can sort the foods by expired time.
 In the Manage food section you can edit, delete and manage your foods.
-Client side live link: https://foodsharing-d0b61.web.app/
+
