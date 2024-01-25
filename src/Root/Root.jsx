@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 
 const Root = () => {
     return (
-        <div className="font-noto">
+        <div className="font-robotocon">
             <Outlet></Outlet>
         </div>
     );

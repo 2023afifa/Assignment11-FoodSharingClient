@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        noto: "'Noto Serif', serif"
+        robotocon: "'Roboto Condensed', sans-serif"
       }
     },
   },
