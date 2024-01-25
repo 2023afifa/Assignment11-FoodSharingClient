@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        robotocon: "'Roboto Condensed', sans-serif"
+        signika: "'Signika Negative', sans-serif"
       }
     },
   },

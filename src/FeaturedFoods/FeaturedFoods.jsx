@@ -13,12 +13,12 @@ const FeaturedFoods = () => {
 
     const sortedData = [...foodCards].sort((a, b) => b.quantity - a.quantity);
 
-    const firstSixItems = sortedData.slice(0, 6);
+    const firstSixItems = sortedData.slice(0, 4);
 
     return (
         <div>
-            <h2 className="text-2xl text-rose-700 uppercase font-bold ml-10 mb-6">Premium Plates</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:mx-24 mb-14">
+            <h2 className="text-2xl text-rose-700 uppercase font-bold ml-3 mb-6">Our Premium Plates</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1 mb-14">
                 {
                     firstSixItems.map(card => <FeaturedFood key={card.id} card={card}></FeaturedFood>)
                 }
