@@ -1,6 +1,6 @@
 const Success = () => {
     return (
-        <div className="mb-20 mx-10">
+        <div className="bg-slate-50 pb-20 px-10">
             <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/qDfHs92/success.jpg)' }}>
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-center text-neutral-content">
