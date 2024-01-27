@@ -1,7 +1,7 @@
 const Banner = () => {
     return (
         <div>
-            <div className="hero bg-gray-100 mb-14">
+            <div className="hero bg-gray-100">
                 <div className="hero-content flex-col lg:flex-row gap-6 max-w-full">
                     <img src="https://i.ibb.co/CP7PpYs/banner.jpg" className="max-w-4xl rounded-lg shadow-lg" />
                     <div>
