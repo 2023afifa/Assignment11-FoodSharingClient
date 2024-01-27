@@ -41,7 +41,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <img className="h-8 md:h-14 mr-2" src={logo} alt="" />
-                    <a className="normal-case text-xl md:text-4xl text-rose-700 font-extrabold">ShareWithHeart</a>
+                    <a className="normal-case text-xl md:text-4xl text-amber-600 font-extrabold">ShareWithHeart</a>
                 </div>
                 <div className="navbar-center hidden lg:flex lg:flex-grow">
                     <ul className="menu menu-horizontal px-1 navLink">
@@ -57,9 +57,9 @@ const Navbar = () => {
                                         <img src={user.photoURL} />
                                     </div>
                                 </label>
-                                <button onClick={handleLogout} className="btn bg-transparent border-none text-lg text-rose-700">Log Out</button>
+                                <button onClick={handleLogout} className="btn bg-transparent border-none text-lg text-amber-600">Log Out</button>
                             </>
-                            : <Link to="/login"><button className="btn bg-transparent border-none text-lg text-rose-700">Login</button></Link>
+                            : <Link to="/login"><button className="btn bg-transparent border-none text-lg text-amber-600">Login</button></Link>
                     }
                 </div>
             </div>

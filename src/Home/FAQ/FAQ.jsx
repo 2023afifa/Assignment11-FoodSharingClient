@@ -7,7 +7,7 @@ const FAQ = () => {
                     <img src="https://i.ibb.co/YPD2mh3/FAQ.jpg" alt="" />
                 </div>
                 <div className="w-1/2">
-                    <div className="collapse collapse-plus bg-slate-50 border-2 border-rose-700">
+                    <div className="collapse collapse-plus bg-slate-50 border-2 border-amber-500">
                         <input type="radio" name="my-accordion-1" checked="checked" />
                         <div className="collapse-title text-xl font-medium">
                             How does the platform work for food donors?
@@ -17,7 +17,7 @@ const FAQ = () => {
                         </div>
                     </div>
                     <br />
-                    <div className="collapse collapse-plus bg-slate-50 border-2 border-rose-700">
+                    <div className="collapse collapse-plus bg-slate-50 border-2 border-amber-500">
                         <input type="radio" name="my-accordion-1" />
                         <div className="collapse-title text-xl font-medium">
                             How can I request food assistance on the platform?
@@ -27,7 +27,7 @@ const FAQ = () => {
                         </div>
                     </div>
                     <br />
-                    <div className="collapse collapse-plus bg-slate-50 border-2 border-rose-700">
+                    <div className="collapse collapse-plus bg-slate-50 border-2 border-amber-500">
                         <input type="radio" name="my-accordion-1" />
                         <div className="collapse-title text-xl font-medium">
                             What types of food items are typically shared on the platform?
