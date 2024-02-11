@@ -3,7 +3,6 @@ import Navbar from "../../Shared/Navbar/Navbar";
 import Footer from "../../Shared/Footer/Footer";
 import FeaturedFoods from "../../FeaturedFoods/FeaturedFoods";
 import FAQ from "../FAQ/FAQ";
-import Gallery from "../Gallery/Gallery";
 import { Helmet } from "react-helmet";
 import Success from "../Success/Success";
 
