@@ -9,8 +9,6 @@ import { Helmet } from "react-helmet";
 const AddFood = () => {
 
     const { user } = useContext(AuthContext);
-    console.log(user);
-    console.log(user.email);
 
     const handleAddFood = e => {
         e.preventDefault();
@@ -22,9 +20,9 @@ const AddFood = () => {
         const expired = form.expired.value;
         const note = form.note.value;
         const status = form.status.value;
-        const donatorname = form.donatorname.value;
-        const donatoremail = form.donatoremail.value;
-        const donatorimage = form.donatorimage.value;
+        const donatorname = user.displayName;
+        const donatoremail = user.email;
+        const donatorimage = user.photoURL;
 
         const newFood = { name, image, quantity, location, expired, note, status, donatorname, donatoremail, donatorimage };
         console.log(newFood);
@@ -104,33 +102,6 @@ const AddFood = () => {
                             <div className="form-control mb-5">
                                 <label className="input-group">
                                     <input type="text" name="note" placeholder="Enter additional notes" className="input w-1/2" />
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div>
-                            <h3 className="font-bold mb-3">Donator Name:</h3>
-                            <div className="form-control mb-5">
-                                <label className="input-group">
-                                    <input type="text" name="donatorname" defaultValue={user.displayName} placeholder="Donator name" className="input w-1/2" />
-                                </label>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 className="font-bold mb-3">Donator Email:</h3>
-                            <div className="form-control mb-5">
-                                <label className="input-group">
-                                    <input type="text" name="donatoremail" defaultValue={user.email} placeholder="Donator email" className="input w-1/2" />
-                                </label>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 className="font-bold mb-3">Donator Image:</h3>
-                            <div className="form-control mb-5">
-                                <label className="input-group">
-                                    <input type="text" name="donatorimage" defaultValue={user.photoURL} placeholder="Donator image" className="input w-1/2" />
                                 </label>
                             </div>
                         </div>
