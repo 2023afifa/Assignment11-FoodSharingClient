@@ -50,73 +50,61 @@ const AddFood = () => {
             </Helmet>
 
             <Navbar></Navbar>
-            <div className="bg-slate-50 my-20">
-                <div className="lg:flex gap-16 items-center mb-14 lg:mx-40">
-                    <img className="w-96 mx-auto" src="https://i.ibb.co/X2wfFXG/addfood.jpg" alt="" />
-                    <p className="text-xl italic">Our platform is a community of caring individuals dedicated to reducing food waste and supporting those in need. Together, we are on a mission to make the world a better place by sharing surplus food with love and compassion. Join our community, share your heart, and be part of a movement that nourishes both the body and soul. Every contribution, no matter how small, makes a significant impact in the fight against hunger and food waste. Together, we are changing lives, one heartfelt share at a time. Explore, connect, and spread the love with ShareWithHeart.</p>
-                </div>
-                <form onSubmit={handleAddFood} className="px-40">
+            <div className="bg-slate-50 mt-10 mb-20">
+                <h2 className="text-center text-3xl font-semibold mb-10">Add Your Food Here</h2>
+                <form onSubmit={handleAddFood} className="lg:px-40">
                     <div>
-                        <div>
-                            <h3 className="font-bold mb-3">Food Name:</h3>
-                            <div className="form-control mb-5">
-                                <label className="input-group">
-                                    <input type="text" name="name" placeholder="Enter food name" className="input w-1/2" />
-                                </label>
+                        <div className="flex justify-between gap-10 mb-10">
+                            <div className="w-1/2">
+                                <h3 className="font-bold mb-1 text-amber-500">Food Name:</h3>
+                                <div>
+                                    <input type="text" name="name" placeholder="Enter food name" className="w-full p-2 border-2 border-amber-400" />
+                                </div>
+                            </div>
+                            <div className="w-1/2">
+                                <h3 className="font-bold mb-1 text-amber-500">Food Image:</h3>
+                                <div>
+                                    <input type="text" name="image" placeholder="Enter food image" className="w-full p-2 border-2 border-amber-400" />
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <h3 className="font-bold mb-3">Food Image:</h3>
-                            <div className="form-control mb-5">
-                                <label className="input-group">
-                                    <input type="text" name="image" placeholder="Enter food image" className="input w-1/2" />
-                                </label>
+                        <div className="flex justify-between mb-10">
+                            <div className="w-1/3">
+                                <h3 className="font-bold mb-1 text-amber-500">Food Quantity (gm):</h3>
+                                <div>
+                                    <input type="text" name="quantity" placeholder="Enter food quantity" className="w-full p-2 border-2 border-amber-400" />
+                                </div>
+                            </div>
+                            <div className="w-1/3">
+                                <h3 className="font-bold mb-1 text-amber-500">Expired Time (days):</h3>
+                                <div>
+                                    <input type="text" name="expired" placeholder="Enter expired time (days)" className="w-full p-2 border-2 border-amber-400" />
+                                </div>
+                            </div>
+                            <div className="w-1/5">
+                                <h3 className="font-bold mb-1 text-amber-500">Food Status:</h3>
+                                <div>
+                                    <input type="text" name="status" defaultValue="Available" placeholder="Enter food status" className="w-full p-2 border-2 border-amber-400" />
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <h3 className="font-bold mb-3">Food Quantity (gm):</h3>
-                            <div className="form-control mb-5">
-                                <label className="input-group">
-                                    <input type="text" name="quantity" placeholder="Enter food quantity" className="input w-1/2" />
-                                </label>
+                        <div className="flex justify-between gap-10 mb-10">
+                            <div className="w-1/2">
+                                <h3 className="font-bold mb-1 text-amber-500">Pickup Location:</h3>
+                                <div>
+                                    <input type="text" name="location" placeholder="Enter pickup location" className="w-full p-2 border-2 border-amber-400" />
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <h3 className="font-bold mb-3">Pickup Location:</h3>
-                            <div className="form-control mb-5">
-                                <label className="input-group">
-                                    <input type="text" name="location" placeholder="Enter pickup location" className="input w-1/2" />
-                                </label>
+                            <div className="w-1/2">
+                                <h3 className="font-bold mb-1 text-amber-500">Additional Notes:</h3>
+                                <div>
+                                    <input type="text" name="note" placeholder="Enter additional notes" className="w-full p-2 border-2 border-amber-400" />
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <h3 className="font-bold mb-3">Expired Time (days):</h3>
-                            <div className="form-control mb-5">
-                                <label className="input-group">
-                                    <input type="text" name="expired" placeholder="Enter expired time (days)" className="input w-1/2" />
-                                </label>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 className="font-bold mb-3">Additional Notes:</h3>
-                            <div className="form-control mb-5">
-                                <label className="input-group">
-                                    <input type="text" name="note" placeholder="Enter additional notes" className="input w-1/2" />
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h3 className="font-bold mb-3">Food Status:</h3>
-                        <div className="form-control mb-5">
-                            <label className="input-group">
-                                <input type="text" name="status" defaultValue="Available" placeholder="Enter food status" className="input w-1/2" />
-                            </label>
                         </div>
                     </div>
                     <div className="text-center">
-                        <input type="submit" value="Add Food" className="btn text-rose-700 bg-rose-200" />
+                        <input type="submit" value="Add Food" className="btn normal-case bg-amber-400 text-white rounded-sm" />
                     </div>
                 </form>
             </div>
