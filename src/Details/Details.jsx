@@ -18,8 +18,21 @@ const Details = () => {
     const { id } = useParams();
     const food = foodDetail.find(food => food._id == id);
 
-    const handleRequest = (foodId, donatorname, donatoremail, donatorimage, location, expired, status, image, myname, myemail, myimage) => {
-        const newRequest = { foodId, donatorname, donatoremail, donatorimage, location, expired, status, image, myname, myemail, myimage };
+    const handleRequest = () => {
+        const newRequest = {
+            foodId: food._id,
+            foodName: food.name,
+            image: food.image,
+            location: food.location,
+            expired: food.expired,
+            status: food.status,
+            donatorname: food.donatorname,
+            donatoremail: food.donatoremail,
+            donatorimage: food.donatorimage,
+            myname: user.displayName,
+            myemail: user.email,
+            myimage: user.photoURL
+        };
         console.log(newRequest);
 
         fetch("http://localhost:5000/request", {
@@ -70,7 +83,7 @@ const Details = () => {
                                     </p>
                                     <div className="modal-action">
                                         <form method="dialog">
-                                            <button onClick={() => handleRequest(food._id, food.donatorname, food.donatoremail, food.donatorimage, food.location, food.expired, food.status, food.image, user.displayName, user.email, user.photoURL)} className="btn bg-amber-300 text-white rounded-sm">Request</button>
+                                            <button onClick={handleRequest} className="btn bg-amber-300 text-white rounded-sm">Request</button>
                                         </form>
                                     </div>
                                 </div>
