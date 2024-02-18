@@ -63,9 +63,11 @@ const Details = () => {
                         <form>
                             <dialog id="my_modal_1" className="modal">
                                 <div className="modal-box">
-                                    <h3 className="font-bold text-lg mb-5">Notes</h3>
-                                    <textarea className="textarea textarea-bordered w-full" placeholder="Notes..."></textarea>
-                                    <p className="py-4">Donate (If you want): <input type="text" placeholder="$" className="input input-bordered w-full" /></p>
+                                    <h3 className="font-bold text-lg mb-2">Notes</h3>
+                                    <textarea className="textarea textarea-bordered w-full rounded-sm" placeholder="Notes..."></textarea>
+                                    <p className="mt-5">Donate (If you want):
+                                        <input type="text" placeholder="$" className="input input-bordered w-full rounded-sm" />
+                                    </p>
                                     <div className="modal-action">
                                         <form method="dialog">
                                             <button onClick={() => handleRequest(food._id, food.donatorname, food.donatoremail, food.donatorimage, food.location, food.expired, food.status, food.image, user.displayName, user.email, user.photoURL)} className="btn bg-amber-300 text-white rounded-sm">Request</button>
