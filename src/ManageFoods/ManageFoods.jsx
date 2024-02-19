@@ -30,7 +30,7 @@ const ManageFoods = () => {
             <h2 className="text-center text-3xl font-semibold my-5">Manage My Foods</h2>
 
             <div>
-                <div className="overflow-x-auto">
+                <div className="overflow-x-auto mb-10">
                     <table className="table">
                         <tbody>
                             {

@@ -38,13 +38,8 @@ const ManageFood = ({ c }) => {
     }
 
     return (
-        <div className="mx-20">
+        <div>
             <tr>
-                <th>
-                    <label>
-                        <input type="checkbox" className="checkbox" />
-                    </label>
-                </th>
                 <td>
                     <div className="flex items-center space-x-3">
                         <div className="avatar">
