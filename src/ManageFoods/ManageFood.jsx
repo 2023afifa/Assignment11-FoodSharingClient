@@ -38,8 +38,8 @@ const ManageFood = ({ c }) => {
     }
 
     return (
-        <div>
-            <tr>
+        <div className="w-2/3 mx-auto border-2 ">
+            <tr className="border-2">
                 <td>
                     <div className="flex items-center space-x-3">
                         <div className="avatar">
