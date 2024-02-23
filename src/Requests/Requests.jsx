@@ -37,26 +37,25 @@ const Requests = () => {
 
             <h2 className="text-center text-3xl font-semibold my-5">My Food Requests</h2>
 
-            <div>
-                <div className="overflow-x-auto my-10">
-                    <table className="table">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Donator Name</th>
-                                <th>Pickup Location</th>
-                                <th>Expired Time (days)</th>
-                                <th>Food Status</th>
-                                <th>Manage request</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                requestCard.map(request => <Request key={request.id} request={request}></Request>)
-                            }
-                        </tbody>
-                    </table>
-                </div>
+            <div className="overflow-x-auto m-10">
+                <table className="table">
+                    <thead className="border-2">
+                        <tr>
+                            <th>Food Image</th>
+                            <th>Food Name</th>
+                            <th>Donator Name</th>
+                            <th>Pickup Location</th>
+                            <th>Expired Time (days)</th>
+                            <th>Food Status</th>
+                            <th>Manage request</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            requestCard.map(request => <Request key={request.id} request={request}></Request>)
+                        }
+                    </tbody>
+                </table>
             </div>
 
             <Footer></Footer>

@@ -46,39 +46,35 @@ const Request = ({ request }) => {
 
     return (
         <div>
-            <div className="">
-                <table className="">
-                    <tr>
-                        <td className="w-1/3">
-                            <div className="flex items-center space-x-3">
-                                <div className="avatar">
-                                    <div className="mask mask-squircle w-12 h-12">
-                                        <img src={image} alt="Avatar Tailwind CSS Component" />
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className="font-bold text-lg">{foodName}</div>
-                                </div>
+            <tr>
+                <td className="w-1/3">
+                    <div className="flex items-center space-x-3">
+                        <div className="avatar">
+                            <div className="mask mask-squircle w-12 h-12">
+                                <img src={image} alt="Avatar Tailwind CSS Component" />
                             </div>
-                        </td>
-                        <th>
-                            {donatorname}
-                        </th>
-                        <th>
-                            {location}
-                        </th>
-                        <th>
-                            {expired}
-                        </th>
-                        <th>
-                            {status}
-                        </th>
-                        <th>
-                            <button onClick={() => handleCancelRequest(_id, status)} className="btn normal-case text-red-500">Cancel Request</button>
-                        </th>
-                    </tr>
-                </table>
-            </div>
+                        </div>
+                        <div>
+                            <div className="font-bold text-lg">{foodName}</div>
+                        </div>
+                    </div>
+                </td>
+                <th>
+                    {donatorname}
+                </th>
+                <th>
+                    {location}
+                </th>
+                <th>
+                    {expired}
+                </th>
+                <th>
+                    {status}
+                </th>
+                <th>
+                    <button onClick={() => handleCancelRequest(_id, status)} className="btn normal-case text-red-500">Cancel Request</button>
+                </th>
+            </tr>
             <ToastContainer />
         </div>
     );
