@@ -18,6 +18,14 @@ const ManageFoods = () => {
     const card = cards.filter(card => card.donatoremail === user.email);
     console.log(card);
 
+    if (card.length == 0) {
+        return <>
+            <Navbar></Navbar>
+            <p className="my-52 text-center text-3xl font-bold">You do not have any foods yet</p>
+            <Footer></Footer>
+        </>
+    }
+
     return (
         <div>
 
