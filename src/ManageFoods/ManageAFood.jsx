@@ -21,10 +21,14 @@ const ManageAFood = () => {
     console.log(requestCard);
 
     if (requestCard.length == 0) {
-        return <p className="my-40 text-center text-3xl font-bold">No Requests Yet</p>
+        return <>
+            <Navbar></Navbar>
+            <p className="my-52 text-center text-3xl font-bold">No Requests Yet</p>
+            <Footer></Footer>
+        </>
     }
 
-    const handleFoodStatus= id => {
+    const handleFoodStatus = id => {
         fetch(`http://localhost:5000/request/${id}`, {
             method: "PATCH",
             headers: {
@@ -51,7 +55,7 @@ const ManageAFood = () => {
 
             <h2 className="text-center text-2xl font-semibold my-5">Manage Food</h2>
 
-            <div className="mb-10">
+            <div className="mb-60">
                 <div className="overflow-x-auto">
                     <table className="table">
                         <tbody>
