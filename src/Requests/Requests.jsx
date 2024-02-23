@@ -37,9 +37,27 @@ const Requests = () => {
 
             <h2 className="text-center text-3xl font-semibold my-5">My Food Requests</h2>
 
-            {
-                requestCard.map(request => <Request key={request.id} request={request}></Request>)
-            }
+            <div>
+                <div className="overflow-x-auto my-10">
+                    <table className="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Donator Name</th>
+                                <th>Pickup Location</th>
+                                <th>Expired Time (days)</th>
+                                <th>Food Status</th>
+                                <th>Manage request</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                requestCard.map(request => <Request key={request.id} request={request}></Request>)
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
             <Footer></Footer>
 

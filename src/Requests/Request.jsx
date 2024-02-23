@@ -3,7 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Request = ({ request }) => {
-    const { _id, donatorname, location, expired, status, image } = request;
+    const { _id, donatorname, foodName, location, expired, status, image } = request;
 
     const handleCancelRequest = (_id, status) => {
         console.log(_id, status);
@@ -46,17 +46,38 @@ const Request = ({ request }) => {
 
     return (
         <div>
-            <div className="card lg:card-side bg-base-100 shadow-xl w-1/3 mx-auto mb-5">
-                <figure><img className="h-40" src={image} alt="Album" /></figure>
-                <div className="card-body">
-                    <h2 className="card-title"><span className="font-bold">Donator Name:</span> {donatorname}</h2>
-                    <p><span className="font-bold">Pickup Location:</span> {location}</p>
-                    <p><span className="font-bold">Expired Time (days):</span> {expired}</p>
-                    <p><span className="font-bold">Food Status:</span> {status}</p>
-                    <div className="card-actions">
-                        <button onClick={() => handleCancelRequest(_id, status)} className="btn normal-case text-red-500">Cancel Request</button>
-                    </div>
-                </div>
+            <div className="">
+                <table className="">
+                    <tr>
+                        <td className="w-1/3">
+                            <div className="flex items-center space-x-3">
+                                <div className="avatar">
+                                    <div className="mask mask-squircle w-12 h-12">
+                                        <img src={image} alt="Avatar Tailwind CSS Component" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className="font-bold text-lg">{foodName}</div>
+                                </div>
+                            </div>
+                        </td>
+                        <th>
+                            {donatorname}
+                        </th>
+                        <th>
+                            {location}
+                        </th>
+                        <th>
+                            {expired}
+                        </th>
+                        <th>
+                            {status}
+                        </th>
+                        <th>
+                            <button onClick={() => handleCancelRequest(_id, status)} className="btn normal-case text-red-500">Cancel Request</button>
+                        </th>
+                    </tr>
+                </table>
             </div>
             <ToastContainer />
         </div>
