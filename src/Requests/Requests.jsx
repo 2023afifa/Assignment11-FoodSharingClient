@@ -19,7 +19,11 @@ const Requests = () => {
     const requestCard = requests.filter(card => card.myemail === user.email);
 
     if (requestCard.length == 0) {
-        return <p className="my-40 text-center text-3xl font-bold">You did not apply any request</p>
+        return <>
+            <Navbar></Navbar>
+            <p className="my-52 text-center text-3xl font-bold">You did not apply any request yet</p>
+            <Footer></Footer>
+        </>
     }
 
     return (
