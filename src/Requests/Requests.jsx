@@ -39,9 +39,9 @@ const Requests = () => {
 
             <div className="overflow-x-auto m-10">
                 <table className="table">
-                    <thead className="border-2">
+                    <thead>
                         <tr>
-                            <th>Food Image</th>
+                            <th className="border-2">Food Image</th>
                             <th>Food Name</th>
                             <th>Donator Name</th>
                             <th>Pickup Location</th>
