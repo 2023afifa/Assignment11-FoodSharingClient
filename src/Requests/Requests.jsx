@@ -38,10 +38,10 @@ const Requests = () => {
             <h2 className="text-center text-3xl font-semibold my-5">My Food Requests</h2>
 
             <div className="overflow-x-auto m-10">
-                <table className="table">
+                <table className="table table-fixed">
                     <thead>
-                        <tr>
-                            <th className="border-2">Food Image</th>
+                        <tr className="text-sm text-amber-600">
+                            <th>Food Image</th>
                             <th>Food Name</th>
                             <th>Donator Name</th>
                             <th>Pickup Location</th>
