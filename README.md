@@ -1,6 +1,6 @@
 Assignment category_0007
 
-5 bullet points for my project
+5 bullet points for the project
 
 This is a food sharing related website named ShareWithHeart. You will find here some food items made by the donators.
 In the featured food section, if you click details section you will see the detail information of the food card. But you have to login first.
