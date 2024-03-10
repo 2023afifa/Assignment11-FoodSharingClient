@@ -57,7 +57,7 @@ const ManageAFood = () => {
 
             <div className="mb-60">
                 <div className="overflow-x-auto">
-                    <table className="table">
+                    <table className="table w-2/3 mx-auto">
                         <tbody>
                             {
                                 requestCard.map(allRequest => <Manage key={allRequest} allRequest={allRequest} handleFoodStatus={handleFoodStatus}></Manage>)
