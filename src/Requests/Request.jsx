@@ -45,38 +45,34 @@ const Request = ({ request }) => {
     }
 
     return (
-        <div className="border-2">
-            <table className="w-full border-2">
-                <tr className="">
-                    <th>
-                        <div className="avatar">
-                            <div className="mask mask-squircle w-12 h-12">
-                                <img src={image} alt="Avatar Tailwind CSS Component" />
-                            </div>
-                        </div>
-                    </th>
-                    <th>
-                        <div className="font-bold text-lg">{foodName}</div>
-                    </th>
-                    <th>
-                        {donatorname}
-                    </th>
-                    <th>
-                        {location}
-                    </th>
-                    <th>
-                        {expired}
-                    </th>
-                    <th>
-                        {status}
-                    </th>
-                    <th>
-                        <button onClick={() => handleCancelRequest(_id, status)} className="btn normal-case text-red-500">Cancel Request</button>
-                    </th>
-                </tr>
-            </table>
-            <ToastContainer />
-        </div>
+        <tr>
+            <th>
+                <div className="avatar">
+                    <div className="mask mask-squircle w-12 h-12">
+                        <img src={image} alt="Avatar Tailwind CSS Component" />
+                    </div>
+                </div>
+            </th>
+            <th>
+                <div className="font-bold text-lg">{foodName}</div>
+            </th>
+            <th>
+                {donatorname}
+            </th>
+            <th>
+                {location}
+            </th>
+            <th>
+                {expired}
+            </th>
+            <th>
+                {status}
+            </th>
+            <th>
+                <button onClick={() => handleCancelRequest(_id, status)} className="btn normal-case text-red-500">Cancel Request</button>
+                <ToastContainer />
+            </th>
+        </tr>
     );
 };
 

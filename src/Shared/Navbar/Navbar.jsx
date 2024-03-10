@@ -25,7 +25,7 @@ const Navbar = () => {
             <li><NavLink className="mr-2" to="/addfood">Add Food</NavLink></li>
             <li><NavLink className="mr-2" to="/managefood">Manage My Foods</NavLink></li>
             <li><NavLink className="mr-2" to="/request">My Food Request</NavLink></li>
-            <li><NavLink className="mr-2" to="/note">Leave Notes</NavLink></li>
+            {/* <li><NavLink className="mr-2" to="/note">Leave Notes</NavLink></li> */}
         </>
 
     return (
