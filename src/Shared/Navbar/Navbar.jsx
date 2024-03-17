@@ -30,8 +30,8 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className="navbar bg-slate-50 md:px-10">
-                <div className="navbar-start w-1/3">
+            <div className="navbar bg-slate-50 md:px-10 justify-around">
+                <div className="navbar-start w-1/2 lg:w-1/3">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -53,11 +53,11 @@ const Navbar = () => {
                         user ?
                             <>
                                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                    <div className="w-10 rounded-full">
+                                    <div className="w-8 md:w-10 rounded-full">
                                         <img src={user.photoURL} />
                                     </div>
                                 </label>
-                                <button onClick={handleLogout} className="btn bg-transparent border-none text-lg text-amber-600">Log Out</button>
+                                <button onClick={handleLogout} className="bg-transparent border-none text-lg text-amber-600 p-1">Log Out</button>
                             </>
                             : <Link to="/login"><button className="btn bg-transparent border-none text-lg text-amber-600">Login</button></Link>
                     }
