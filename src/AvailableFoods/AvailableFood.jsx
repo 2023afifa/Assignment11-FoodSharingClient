@@ -6,7 +6,7 @@ const AvailableFood = ({ card }) => {
 
     return (
         <div>
-            <div className="card w-96 h-[550px] rounded-none bg-base-100 shadow-md mx-auto">
+            <div className="card w-96 md:w-[360px] lg:w-96 h-[550px] rounded-none bg-base-100 shadow-md mx-auto">
                 <figure><img src={image} alt="Food" /></figure>
                 <div className="card-body">
                     <h2 className="card-title text-3xl">{name}</h2>

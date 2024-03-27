@@ -64,7 +64,7 @@ const AvailableFoods = () => {
             <Navbar></Navbar>
             <h2 className="text-center text-3xl font-semibold my-5">All Available Foods</h2>
 
-            <div className="flex justify-between my-10 mx-12">
+            <div className="flex justify-between my-10 mx-2 md:mx-12">
                 <div className="form-control">
                     <div className="input-group">
                         <input value={searchTerm} onChange={e => setSearchTerm(e.target.value)} type="text" placeholder="Search by name…" className="input input-bordered border-2 border-amber-300" />
@@ -76,7 +76,7 @@ const AvailableFoods = () => {
                 <button onClick={handleExpired} className="btn normal-case rounded-sm text-amber-400 bg-transparent border-amber-300">Sort by expired time</button>
             </div>
 
-            <div className="grid lg:grid-cols-3 gap-10 mb-10">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10 mb-10">
                 {
                     foodCards.map(card => <AvailableFood key={card.id} card={card}></AvailableFood>)
                 }
