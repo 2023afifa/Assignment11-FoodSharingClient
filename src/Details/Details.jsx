@@ -55,9 +55,9 @@ const Details = () => {
         <div>
             <Navbar></Navbar>
 
-            <div className="flex items-center justify-evenly m-10">
+            <div className="lg:flex items-center justify-evenly m-10">
 
-                <div className="w-2/5 bg-amber-50 shadow-2xl">
+                <div className="lg:w-2/5 bg-amber-50 shadow-2xl">
                     <img className="p-10" src={food.image} alt="" />
                 </div>
 
